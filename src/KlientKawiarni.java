@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class KlientKawiarni {
     private int idKlienta;
     private String imie;
@@ -13,19 +11,19 @@ public class KlientKawiarni {
         this.email = email;
     }
 
-    public String pobierzPelneDane() {
-        return imie + " " + nazwisko + " (Email: " + email + ")";
+    public String getPelneDane() {
+        return imie + " " + nazwisko + " (" + email + ")";
     }
 
     public String toString() {
-        return "Klient [ID: " + idKlienta + "] " + pobierzPelneDane();
+        return "Klient ID: " + idKlienta + ", " + getPelneDane();
     }
 
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        
-        KlientKawiarni klient = (KlientKawiarni) o;
-        return idKlienta == klient.idKlienta;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof KlientKawiarni)) return false;
+
+        KlientKawiarni other = (KlientKawiarni) obj;
+        return this.email.equals(other.email);
     }
 }
