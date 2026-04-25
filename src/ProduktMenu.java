@@ -23,12 +23,10 @@ public class ProduktMenu {
         return liczbaProduktow;
     }
 
-    @Override
     public String toString() {
         return nazwa + " (" + kod + ") - " + cena + " zł [" + kategoria + "]";
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof ProduktMenu)) return false;
